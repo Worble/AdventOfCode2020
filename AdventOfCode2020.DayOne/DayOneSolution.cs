@@ -4,13 +4,14 @@ using System.Linq;
 
 namespace AdventOfCode2020.DayOne
 {
-	public class DayOne
+	public class DayOneSolution
 	{
 		private readonly List<int> _expenseReport;
 
-		public DayOne(List<int> expenseReport)
+		public DayOneSolution(List<int> expenseReport)
 		{
 			_expenseReport = expenseReport;
+			_expenseReport.Sort();
 		}
 
 		public int MultiplyValuesFromSumTarget(int sumTarget, int amountToSum)

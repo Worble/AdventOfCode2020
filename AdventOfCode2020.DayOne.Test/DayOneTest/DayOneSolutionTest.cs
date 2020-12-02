@@ -1,9 +1,9 @@
 using System.Linq;
 using Xunit;
 
-namespace AdventOfCode2020.DayOne.Test
+namespace AdventOfCode2020.Test
 {
-	public class DayOneTest
+	public class DayOneSolutionTest
 	{
 		[Theory]
 		[InlineData(new int[] { 1721, 979, 366, 299, 675, 1456 }, 2020, 2, 514579)]
@@ -13,7 +13,7 @@ namespace AdventOfCode2020.DayOne.Test
 		public void MultiplyValuesFromSumTarget_ReturnsTheCorrectMultipliedAmount_GivenTheParameters(int[] expenses, int sumTarget, int amountToSum, int expected)
 		{
 			//arrange
-			var dayOne = new DayOne(expenses.ToList());
+			var dayOne = new DayOne.DayOneSolution(expenses.ToList());
 
 			//act
 			var result = dayOne.MultiplyValuesFromSumTarget(sumTarget, amountToSum);
