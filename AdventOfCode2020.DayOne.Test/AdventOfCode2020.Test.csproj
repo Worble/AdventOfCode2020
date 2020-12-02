@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<TargetFramework>net5</TargetFramework>
 		<Nullable>enable</Nullable>
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\AdventOfCode2020.DayOne\AdventOfCode2020.DayOne.csproj" />
-	  <ProjectReference Include="..\AdventOfCode2020.DayTwo\AdventOfCode2020.DayTwo.csproj" />
+		<ProjectReference Include="..\AdventOfCode2020.DayOne\AdventOfCode2020.DayOne.csproj" />
+		<ProjectReference Include="..\AdventOfCode2020.DayTwo\AdventOfCode2020.DayTwo.csproj" />
 	</ItemGroup>
 </Project>

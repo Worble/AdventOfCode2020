@@ -8,5 +8,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\AdventOfCode2020.DayOne\AdventOfCode2020.DayOne.csproj" />
+		<ProjectReference Include="..\AdventOfCode2020.DayTwo\AdventOfCode2020.DayTwo.csproj" />
 	</ItemGroup>
 </Project>

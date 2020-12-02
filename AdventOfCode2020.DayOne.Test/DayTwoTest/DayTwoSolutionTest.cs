@@ -1,4 +1,5 @@
 using System.Linq;
+using AdventOfCode2020.DayTwo;
 using Xunit;
 
 namespace AdventOfCode2020.Test.DayTwoTest
@@ -11,7 +12,7 @@ namespace AdventOfCode2020.Test.DayTwoTest
 		public void SumValidPasswords_ReturnsTheValidPassword(string[] passwordsAndPolicy, int expected)
 		{
 			//arrange
-			var dayTwo = new DayTwo.DayTwoSolution(passwordsAndPolicy.ToList());
+			var dayTwo = new DayTwoSolution(passwordsAndPolicy.ToList());
 
 			//act
 			var result = dayTwo.SumValidPasswords();
@@ -26,7 +27,7 @@ namespace AdventOfCode2020.Test.DayTwoTest
 		public void SumValidPasswordsBasedOnPosition_ReturnsTheValidPassword(string[] passwordsAndPolicy, int expected)
 		{
 			//arrange
-			var dayTwo = new DayTwo.DayTwoSolution(passwordsAndPolicy.ToList());
+			var dayTwo = new DayTwoSolution(passwordsAndPolicy.ToList());
 
 			//act
 			var result = dayTwo.SumValidPasswordsBasedOnPosition();

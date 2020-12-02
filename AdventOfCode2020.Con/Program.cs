@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using AdventOfCode2020.Con.DayOneCon;
+using AdventOfCode2020.Con.DayTwoCon;
 
 namespace AdventOfCode2020.Con
 {
@@ -44,12 +45,19 @@ namespace AdventOfCode2020.Con
 					case 1:
 						PrintTitle(day);
 						DayOneConsole.Run();
-						continue;
+						break;
+
+					case 2:
+						PrintTitle(day);
+						DayTwoConsole.Run();
+						break;
+
 					default:
 						run = true;
 						Console.WriteLine("Day not yet complete");
-						continue;
+						break;
 				}
+				Console.WriteLine();
 			}
 		}
 
