@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,18 +13,12 @@ namespace AdventOfCode2020.DayTwo
 			_passwordsAndPolicy = passwordsAndPolicy;
 		}
 
-		public int SumValidPasswords()
+		public int SumValidPasswords(PasswordStrategy passwordStrategy)
 		{
 			var amount = 0;
 			foreach (var passwordAndPolicyString in _passwordsAndPolicy)
 			{
-				var passwordAndPolicy = new PasswordAndPolicy(passwordAndPolicyString);
-				var policyLeast = passwordAndPolicy.PolicyLeast;
-				var policyMost = passwordAndPolicy.PolicyMost;
-				var character = passwordAndPolicy.Character;
-				var password = passwordAndPolicy.Password;
-				var count = password.Count(s => s == character);
-				if (count >= policyLeast && count <= policyMost)
+				if (PasswordValid(passwordStrategy, passwordAndPolicyString))
 				{
 					amount++;
 				}
@@ -31,23 +26,28 @@ namespace AdventOfCode2020.DayTwo
 			return amount;
 		}
 
-		public int SumValidPasswordsBasedOnPosition()
+		private static bool PasswordValid(PasswordStrategy passwordStrategy, string passwordAndPolicyString)
 		{
-			var amount = 0;
-			foreach (var passwordAndPolicyString in _passwordsAndPolicy)
+			var passwordAndPolicy = new PasswordAndPolicy(passwordAndPolicyString);
+			var policyLeast = passwordAndPolicy.PolicyLeast;
+			var policyMost = passwordAndPolicy.PolicyMost;
+			var character = passwordAndPolicy.Character;
+			var password = passwordAndPolicy.Password;
+
+			switch (passwordStrategy)
 			{
-				var passwordAndPolicy = new PasswordAndPolicy(passwordAndPolicyString);
-				var policyLeast = passwordAndPolicy.PolicyLeast;
-				var policyMost = passwordAndPolicy.PolicyMost;
-				var character = passwordAndPolicy.Character;
-				var password = passwordAndPolicy.Password;
-				if ((password[policyLeast - 1] == character && password[policyMost - 1] != character) ||
-					(password[policyLeast - 1] != character && password[policyMost - 1] == character))
-				{
-					amount++;
-				}
+				case PasswordStrategy.CharacterPosition:
+					return
+						(password[policyLeast - 1] == character && password[policyMost - 1] != character) ||
+						(password[policyLeast - 1] != character && password[policyMost - 1] == character);
+
+				case PasswordStrategy.MinMaxCharacters:
+					var count = password.Count(s => s == character);
+					return count >= policyLeast && count <= policyMost;
+
+				default:
+					throw new ArgumentOutOfRangeException(nameof(passwordStrategy));
 			}
-			return amount;
 		}
 	}
 }

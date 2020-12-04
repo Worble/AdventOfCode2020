@@ -11,8 +11,8 @@ namespace AdventOfCode2020.Con.DayTwoCon
 		public static void Run()
 		{
 			var dayTwo = new DayTwoSolution(PasswordsAndPolicies);
-			Console.WriteLine($"Valid passwords: {dayTwo.SumValidPasswords()}");
-			Console.WriteLine($"Valid passwords based on position: {dayTwo.SumValidPasswordsBasedOnPosition()}");
+			Console.WriteLine($"Valid passwords: {dayTwo.SumValidPasswords(PasswordStrategy.MinMaxCharacters)}");
+			Console.WriteLine($"Valid passwords based on position: {dayTwo.SumValidPasswords(PasswordStrategy.CharacterPosition)}");
 		}
 	}
 }

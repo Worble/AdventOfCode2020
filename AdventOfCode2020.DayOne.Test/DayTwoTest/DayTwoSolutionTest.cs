@@ -15,7 +15,7 @@ namespace AdventOfCode2020.Test.DayTwoTest
 			var dayTwo = new DayTwoSolution(passwordsAndPolicy.ToList());
 
 			//act
-			var result = dayTwo.SumValidPasswords();
+			var result = dayTwo.SumValidPasswords(PasswordStrategy.MinMaxCharacters);
 
 			//assert
 			Assert.Equal(expected, result);
@@ -30,7 +30,7 @@ namespace AdventOfCode2020.Test.DayTwoTest
 			var dayTwo = new DayTwoSolution(passwordsAndPolicy.ToList());
 
 			//act
-			var result = dayTwo.SumValidPasswordsBasedOnPosition();
+			var result = dayTwo.SumValidPasswords(PasswordStrategy.CharacterPosition);
 
 			//assert
 			Assert.Equal(expected, result);

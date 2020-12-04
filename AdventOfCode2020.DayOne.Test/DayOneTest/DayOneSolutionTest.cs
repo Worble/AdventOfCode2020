@@ -1,7 +1,8 @@
 using System.Linq;
+using AdventOfCode2020.DayOne;
 using Xunit;
 
-namespace AdventOfCode2020.Test
+namespace AdventOfCode2020.Test.DayOneTest
 {
 	public class DayOneSolutionTest
 	{
@@ -13,7 +14,7 @@ namespace AdventOfCode2020.Test
 		public void MultiplyValuesFromSumTarget_ReturnsTheCorrectMultipliedAmount_GivenTheParameters(int[] expenses, int sumTarget, int amountToSum, int expected)
 		{
 			//arrange
-			var dayOne = new DayOne.DayOneSolution(expenses.ToList());
+			var dayOne = new DayOneSolution(expenses.ToList());
 
 			//act
 			var result = dayOne.MultiplyValuesFromSumTarget(sumTarget, amountToSum);
