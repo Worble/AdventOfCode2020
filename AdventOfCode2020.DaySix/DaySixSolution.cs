@@ -58,10 +58,4 @@ namespace AdventOfCode2020.DaySix
 			return _questionsAnsweredYes.Select(e => e.Answers.Count).Sum();
 		}
 	}
-
-	public class GroupAnswers
-	{
-		public Dictionary<char, int> Answers { get; set; } = new Dictionary<char, int>();
-		public int PeopleInGroup { get; set; } = 0;
-	}
 }

@@ -21,9 +21,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\AdventOfCode2020.DayEight\AdventOfCode2020.DayEight.csproj" />
 		<ProjectReference Include="..\AdventOfCode2020.DayFive\AdventOfCode2020.DayFive.csproj" />
 		<ProjectReference Include="..\AdventOfCode2020.DayFour\AdventOfCode2020.DayFour.csproj" />
+		<ProjectReference Include="..\AdventOfCode2020.DayNine\AdventOfCode2020.DayNine.csproj" />
 		<ProjectReference Include="..\AdventOfCode2020.DayOne\AdventOfCode2020.DayOne.csproj" />
+		<ProjectReference Include="..\AdventOfCode2020.DaySeven\AdventOfCode2020.DaySeven.csproj" />
 		<ProjectReference Include="..\AdventOfCode2020.DaySix\AdventOfCode2020.DaySix.csproj" />
 		<ProjectReference Include="..\AdventOfCode2020.DayThree\AdventOfCode2020.DayThree.csproj" />
 		<ProjectReference Include="..\AdventOfCode2020.DayTwo\AdventOfCode2020.DayTwo.csproj" />
